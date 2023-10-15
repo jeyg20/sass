@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-size: 16rem;
+  font-size: 14rem;
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.5;
   color: #7C6A0A;
@@ -21,16 +21,19 @@ nav {
 }
 nav .container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 20px;
 }
 nav p {
   cursor: pointer;
   font-size: 20rem;
 }
 nav .icons {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 0;
   top: 60rem;
@@ -38,15 +41,13 @@ nav .icons {
   background-color: #ffefe7;
   width: 100vw;
   border-radius: 10px;
-  text-align: center;
   transition: 0.3s;
   box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
 }
 nav .icons button {
-  margin: 2.5rem 0;
   background: none;
-  cursor: pointer;
   border-style: none;
+  cursor: pointer;
 }
 nav .hamburger {
   display: block;
@@ -73,6 +74,7 @@ main .container {
 main .container article {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: auto;
   color: #7C6A0A;
@@ -89,6 +91,7 @@ main .container article .img-section img {
 main .container article .impact-section {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 25px;
   padding-top: 10px;
@@ -96,16 +99,16 @@ main .container article .impact-section {
 main .container article .impact-section h1 {
   font-size: 30rem;
 }
-main .container article .impact-section p {
-  font-size: 14rem;
+main .container article .impact-section button {
+  background: none;
+  border-style: none;
+  cursor: pointer;
 }
 main .container article .impact-section button {
   aspect-ratio: 1/0.25;
   width: 50vw;
   max-width: 210px;
   background-color: #FA9500;
-  cursor: pointer;
-  border: none;
   border-radius: 35px;
   font-size: 16rem;
   font-weight: bold;
@@ -127,15 +130,11 @@ main .container section .product-img img {
   border-radius: 6px;
 }
 main .container section h3 {
-  width: -moz-fit-content;
-  width: fit-content;
   font-size: 16rem;
-}
-main .container section p {
-  font-size: 14rem;
 }
 main .container section .card-section {
   display: flex;
+  flex-direction: row;
   overflow-x: auto;
   gap: 30px;
 }
@@ -155,6 +154,9 @@ main .container section .card-section .product-card {
 }
 main .container section .card-section .product-card .icon {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   justify-content: flex-end;
   position: absolute;
   top: 0;
@@ -172,7 +174,7 @@ main .container section .furniture .product-card {
   justify-content: space-evenly;
   width: 100%;
   height: 250px;
-  padding-left: 50px;
+  padding-left: 30px;
   background-color: #FA9500;
   color: #ffffff;
 }

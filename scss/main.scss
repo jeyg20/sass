@@ -6,8 +6,24 @@ $primary-text-color: #7C6A0A;
 $secondary-text-color: #E86424;
 $tertiary-text-color: #ffffff;
 $font-stack: 'IBM Plex Sans', sans-serif;
-$paragraph-size: 14rem;
+$paragraph-size: 14rem !default;
 $max-width: 1400px;
+$table-size: 768px;
+
+
+@mixin flexCenter ($direction, $justify: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin buttonStyle{
+    button {
+        background: none;
+        border-style: none;
+        cursor: pointer;
+    }
+}
 
 * {
     box-sizing: border-box;
@@ -19,7 +35,7 @@ html {
 }
   
 body {
-    font-size: 16rem;
+    font-size: $paragraph-size;
     font-family: $font-stack;
     line-height: 1.5;
     color: $primary-text-color;
@@ -29,11 +45,10 @@ nav {
     width: auto;
     background-color: $primary-color;
     .container {
-        display: flex;
-        justify-content: space-between;
+        @include flexCenter(row, space-between);
         max-width: $max-width;
         margin: 0 auto;
-        padding: 25px;
+        padding: 20px;
     }
 
     p {
@@ -42,6 +57,7 @@ nav {
     }
 
     .icons {
+        @include flexCenter(column);
         position: absolute;
         left: 0;
         top: 60rem;
@@ -49,15 +65,9 @@ nav {
         background-color: $primary-color;
         width: 100vw;
         border-radius: 10px;
-        text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        button {
-            margin: 2.5rem 0;
-            background: none;
-            cursor: pointer;
-            border-style: none;
-        }
+        @include buttonStyle();
     }
 
     .hamburger {
@@ -74,6 +84,7 @@ nav {
         }
     }
 }
+
 main {
     width: auto;
     background-color: $primary-color;
@@ -82,9 +93,7 @@ main {
         margin: 0 auto;
         padding: 0px 20px;
         article {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flexCenter(column, space-between, center);
             width: auto;
             color: $primary-text-color;
 
@@ -100,23 +109,18 @@ main {
             }
 
             .impact-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flexCenter(column,space-between, center);
                 gap: 25px;
                 padding-top: 10px;
 
                 h1 { font-size: 30rem; }
-    
-                p { font-size: $paragraph-size; }
-    
+                
+                @include buttonStyle();
                 button{
                     aspect-ratio: 1 / 0.25;
                     width: 50vw;
                     max-width: 210px;
                     background-color: $quaternary-color;
-                    cursor: pointer;
-                    border: none;
                     border-radius: 35px;
                     font-size: 16rem;
                     font-weight: bold;
@@ -144,22 +148,16 @@ main {
             }
 
             h3 {
-                width: fit-content;
                 font-size: 16rem;
-            }
-
-            p {
-                font-size: $paragraph-size;
             }
             
             .card-section {
-                display: flex;
+                @include flexCenter(row);
                 overflow-x: auto;
                 gap:30px;
 
                 .product-card {
-                    display: flex;
-                    flex-direction: column;
+                    @include flexCenter(column);
                     flex-shrink: 0;
                     width: 70vw;
                     aspect-ratio: 1 / 1.5;
@@ -171,7 +169,7 @@ main {
                     background-color: $secondary-color;
                     border-radius: 8px;
                     .icon {
-                        display: flex;
+                        @include flexCenter(row,flex-end, center);
                         justify-content: flex-end;
                         position: absolute;
                         top: 0;
@@ -193,12 +191,10 @@ main {
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    @include flexCenter(column, space-evenly);
     width: 100%;
     height: 250px;
-    padding-left: 50px;
+    padding-left: 30px;
     background-color: $quaternary-color;
     color: $tertiary-text-color;
     .social-media{
