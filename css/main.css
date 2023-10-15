@@ -147,6 +147,8 @@ main .container section .card-section .product-card {
   aspect-ratio: 1/1.5;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   position: relative;
+  min-width: 200px;
+  max-width: 320px;
   padding: 35px 30px;
   background-color: #FFDAC6;
   border-radius: 8px;
