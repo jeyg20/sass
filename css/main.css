@@ -23,37 +23,38 @@ nav .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
 }
-nav p {
+nav .container p {
   cursor: pointer;
   font-size: 20rem;
 }
-nav .icons {
-  display: flex;
-  flex-direction: column;
+nav .container .icons {
+  display: none;
   position: absolute;
   left: 0;
   top: 60rem;
-  flex-direction: column;
   background-color: #ffefe7;
   width: 100vw;
   border-radius: 10px;
-  transition: 0.3s;
   box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
 }
-nav .icons button {
+nav .container .icons button {
   background: none;
   border-style: none;
   cursor: pointer;
 }
-nav .hamburger {
+nav .container .icons.responsive {
+  display: flex;
+  flex-direction: column;
+}
+nav .container .hamburger {
   display: block;
   cursor: pointer;
 }
-nav .hamburger .bar {
+nav .container .hamburger .bar {
   display: block;
   width: 25px;
   height: 3px;
@@ -67,9 +68,12 @@ main {
   background-color: #ffefe7;
 }
 main .container {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0px 20px;
+}
+main .container h1 {
+  font-size: 30rem;
 }
 main .container h2 {
   margin: 40px 0;
@@ -101,11 +105,9 @@ main .container article .impact-section {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  max-width: 600px;
   gap: 25px;
   padding-top: 10px;
-}
-main .container article .impact-section h1 {
-  font-size: 30rem;
 }
 main .container article .impact-section button {
   background: none;
@@ -138,19 +140,19 @@ main .container .product-section .product-img img {
 main .container .product-section .card-section {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 30px;
 }
 main .container .product-section .card-section .product-card {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  width: 70vw;
+  width: 60vw;
   aspect-ratio: 1/1.5;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   position: relative;
   min-width: 200px;
-  max-width: 320px;
+  max-width: 325px;
   padding: 35px 30px;
   background-color: #FFDAC6;
   border-radius: 8px;
@@ -165,27 +167,27 @@ main .container .product-section .card-section .product-card .icon {
   top: 0;
   right: 0;
   width: 100%;
-  margin: 7px;
+  margin: 8px;
 }
 main .container .product-section .furniture .product-card {
   background-color: #BABD8D;
 }
-main .container .about-us-section .why-us {
+main .container .about-us-section .mission {
   display: flex;
   flex-direction: column;
 }
-main .container .about-us-section .why-us .sustainability, main .container .about-us-section .why-us .innovation {
+main .container .about-us-section .mission .sustainability, main .container .about-us-section .mission .innovation {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 }
-main .container .about-us-section .why-us .sustainability img, main .container .about-us-section .why-us .innovation img {
+main .container .about-us-section .mission .sustainability img, main .container .about-us-section .mission .innovation img {
   width: 30vw;
-  max-width: 200px;
+  max-width: 160px;
 }
-main .container .about-us-section .why-us .sustainability p, main .container .about-us-section .why-us .innovation p {
+main .container .about-us-section .mission .sustainability p, main .container .about-us-section .mission .innovation p {
   width: 180px;
   text-align: center;
   color: #E86424;
@@ -203,8 +205,8 @@ main .container .gallery .gallery-images {
   padding-bottom: 40px;
 }
 main .container .gallery .gallery-images img {
-  width: 80vw;
-  max-width: 400px;
+  width: 70vw;
+  max-width: 350px;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -236,7 +238,7 @@ footer .container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0px 20px;
   width: 100vw;
@@ -248,11 +250,132 @@ footer .container h3, footer main .container .find-us p, main footer .container 
 }
 footer .container .social-media {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
 }
 footer .container .social-media img {
   width: 8vw;
-  max-width: 45px;
+  max-width: 40px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18rem;
+  }
+  nav .container {
+    padding: 20px 40px;
+  }
+  nav .container .icons {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    gap: 20px;
+  }
+  nav .container .hamburger {
+    display: none;
+  }
+  main .container h1 {
+    font-size: 35rem;
+  }
+  main .container h2 {
+    font-size: 30rem;
+  }
+  main .container h3, main .container .find-us p {
+    font-size: 20rem;
+  }
+  main .container .about-us-section .mission {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  main .container .about-us-section .mission .sustainability p, main .container .about-us-section .mission .innovation p {
+    width: 270px;
+  }
+  footer .container .social-media {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    padding: 40px;
+  }
+  main .container h1 {
+    font-size: 40rem;
+  }
+  main .container h2 {
+    font-size: 35rem;
+  }
+  main .container h3, main .container .find-us p {
+    font-size: 25rem;
+  }
+  main .container article {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+  main .container article .img-section img {
+    width: 45vw;
+  }
+  main .container article .impact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: flex-start;
+    width: 40vw;
+  }
+  main .container article .impact-section h1, main .container article .impact-section p {
+    padding-bottom: 20px;
+  }
+  main .container .product-section {
+    padding-bottom: 50px;
+  }
+  main .container .product-section .card-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 35px;
+  }
+  main .container .product-section .card-section .product-card {
+    width: 27vw;
+  }
+  main .container .about-us-section .mission {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 80px 0;
+  }
+  main .container .about-us-section .mission .sustainability, main .container .about-us-section .mission .innovation {
+    display: flex;
+    flex-direction: row;
+  }
+  main .container .about-us-section .mission .innovation p {
+    margin-left: -20px;
+  }
+  main .container .gallery {
+    padding: 0;
+  }
+  main .container .gallery .gallery-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main .container .gallery .gallery-images img {
+    width: 28vw;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    font-size: 20rem;
+  }
+  main .container .product-section .card-section {
+    gap: 50px;
+  }
 }/*# sourceMappingURL=main.css.map */

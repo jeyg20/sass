@@ -6,10 +6,8 @@ $primary-text-color: #7C6A0A;
 $secondary-text-color: #E86424;
 $tertiary-text-color: #ffffff;
 $font-stack: 'IBM Plex Sans', sans-serif;
-$paragraph-size: 14rem !default;
-$max-width: 1400px;
-$table-size: 768px;
-
+$paragraph-size: 14rem;
+$max-width: 1440px;
 
 @mixin flexCenter ($direction, $justify: null, $align: null) {
     display: flex;
@@ -49,40 +47,44 @@ nav {
         max-width: $max-width;
         margin: 0 auto;
         padding: 20px;
-    }
 
-    p {
-        cursor: pointer;
-        font-size: 20rem;
-    }
+        p {
+            cursor: pointer;
+            font-size: 20rem;
+        }
+    
+        .icons {
+           display: none;
+           position: absolute;
+           left: 0;
+           top: 60rem;
+           background-color: $primary-color;
+           width: 100vw;
+           border-radius: 10px;
+           box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+           @include buttonStyle();
+           
+           &.responsive {
+               @include flexCenter(column);
+           }
+        }
 
-    .icons {
-        @include flexCenter(column);
-        position: absolute;
-        left: 0;
-        top: 60rem;
-        flex-direction: column;
-        background-color: $primary-color;
-        width: 100vw;
-        border-radius: 10px;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        @include buttonStyle();
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        .bar {
+    
+        .hamburger {
             display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-            background-color: $primary-text-color;
+            cursor: pointer;
+            .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                background-color: $primary-text-color;
+            }
         }
     }
+
 }
 
 main {
@@ -93,6 +95,8 @@ main {
         max-width: $max-width;
         margin: 0 auto;
         padding: 0px 20px;
+        
+        h1 { font-size: 30rem; }
 
         h2 {   
             margin: 40px 0;
@@ -122,11 +126,10 @@ main {
 
             .impact-section {
                 @include flexCenter(column, space-between, center);
+                max-width: 600px;
                 gap: 25px;
                 padding-top: 10px;
 
-                h1 { font-size: 30rem; }
-                
                 @include buttonStyle();
                 button{
                     aspect-ratio: 1 / 0.25;
@@ -161,18 +164,18 @@ main {
             
             .card-section {
                 @include flexCenter(row);
-                overflow-x: auto;
+                overflow-x: scroll;
                 gap:30px;
 
                 .product-card {
                     @include flexCenter(column);
                     flex-shrink: 0;
-                    width: 70vw;
+                    width: 60vw;
                     aspect-ratio: 1 / 1.5;
                     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
                     position: relative;
                     min-width: 200px;
-                    max-width: 320px;
+                    max-width: 325px;
                     padding: 35px 30px;
                     background-color: $secondary-color;
                     border-radius: 8px;
@@ -183,7 +186,7 @@ main {
                         top: 0;
                         right: 0;
                         width: 100%;
-                        margin: 7px;
+                        margin: 8px;
                     }
 
                 }
@@ -197,16 +200,16 @@ main {
         }
         
         .about-us-section {
-            .why-us {
+            .mission {
                 @include flexCenter(column);
                 
                 .sustainability {
-                    @include flexCenter(column, space-between, center);
+                    @include flexCenter(column, center, center);
                     margin-bottom: 40px;
 
                     img {
                         width: 30vw;
-                        max-width: 200px;
+                        max-width: 160px;
                     }
 
                     p {
@@ -229,10 +232,10 @@ main {
                 @include flexCenter(column, normal, center);
                 gap: 40px;
                 padding-bottom: 40px;
-
+                
                 img {
-                    width: 80vw;
-                    max-width: 400px;
+                    width: 70vw;
+                    max-width: 350px;
                     aspect-ratio: 1;
                     object-fit: cover;
                     border-radius: 10px;
@@ -280,14 +283,155 @@ footer {
         }
         
         .social-media{
-            display: flex;
-            justify-content: center;
+            @include flexCenter(row, center);
             gap: 20px;
             
             img {
                 width: 8vw;
-                max-width: 45px;
+                max-width: 40px;
                 cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    $paragraph-size: 18rem;
+
+    body {
+        font-size: $paragraph-size;
+    }
+
+    nav {
+        .container {
+            padding: 20px 40px;
+        
+            .icons {
+                @include flexCenter(row);
+                position: static;
+                left: auto;
+                top: auto;
+                width: auto;
+                gap: 20px;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+    }
+    
+    main {
+        .container {
+            h1 { font-size: 35rem; }
+            h2 { font-size: 30rem; }
+            h3 { font-size: 20rem; }
+
+            .about-us-section {
+                .mission {
+                    @include flexCenter(row, space-evenly);
+                    .sustainability{
+                        p {
+                            width: 270px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .container {
+            .social-media {
+                padding-top: 50px;
+            }
+        }
+    }
+            
+}
+
+@media (min-width: 1024px){
+    main {
+        padding: 40px;
+        .container {
+            h1 { font-size: 40rem; }
+            h2 { font-size: 35rem;}
+            h3 { font-size: 25rem; }
+
+            article {
+                @include flexCenter(row-reverse, space-between);
+                padding-bottom: 50px;
+                
+                .img-section{
+                    img {
+                        width: 45vw;
+                    }
+                }
+
+                .impact-section{
+                    @include flexCenter(column, normal, flex-start);
+                    width: 40vw;
+
+                    h1, p {padding-bottom: 20px}
+                }
+            }
+
+            .product-section {
+                padding-bottom: 50px;
+                .card-section {
+                    @include flexCenter(row, space-between);
+                    flex-wrap: wrap;
+                    overflow: hidden;
+                    gap: 35px;
+
+                    .product-card {width: 27vw}
+                }
+            }
+            
+            .about-us-section {
+
+                .mission {
+                    @include flexCenter(row, space-around);
+                    padding: 80px 0;
+                    .sustainability{
+                        @include flexCenter(row);
+                    }
+                    .innovation{
+                        p { margin-left: -20px;}
+                    }
+                }
+            }
+
+            .gallery {
+                padding: 0;
+                .gallery-images {
+                    @include flexCenter(row, space-between);
+                    
+                    img {
+                        width: 28vw;
+                    }
+
+                }
+            }
+
+
+        }
+        
+    }
+}
+
+@media (min-width: 1440px) {
+    $paragraph-size: 20rem;
+
+    body { font-size: $paragraph-size; }
+
+    main {
+        .container{
+            .product-section{
+                .card-section {
+                    gap: 50px;
+                }
             }
         }
     }
