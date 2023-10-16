@@ -264,25 +264,31 @@ main {
 }
 
 footer {
-    @include flexCenter(column, space-evenly);
-    width: 100vw;
-    height: 250px;
     background-color: $quaternary-color;
-    color: $tertiary-text-color;
-
-    h3, p {
-        padding-left: 20px;
-    }
     
-    .social-media{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        cursor: pointer;
-
-        img {
-            width: 8vw;
-            max-width: 45px;
+    .container{
+        @include flexCenter(column, space-evenly);
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0px 20px;
+        width: 100vw;
+        height: 250px;
+        color: $tertiary-text-color;
+    
+        h3, p {
+            padding-left: 20px;
+        }
+        
+        .social-media{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            
+            img {
+                width: 8vw;
+                max-width: 45px;
+                cursor: pointer;
+            }
         }
     }
 }

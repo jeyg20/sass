@@ -230,24 +230,29 @@ main .container .find-us p {
 }
 
 footer {
+  background-color: #FA9500;
+}
+footer .container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0px 20px;
   width: 100vw;
   height: 250px;
-  background-color: #FA9500;
   color: #ffffff;
 }
-footer h3, footer main .container .find-us p, main .container .find-us footer p, footer p {
+footer .container h3, footer main .container .find-us p, main footer .container .find-us p, footer .container p {
   padding-left: 20px;
 }
-footer .social-media {
+footer .container .social-media {
   display: flex;
   justify-content: center;
   gap: 20px;
-  cursor: pointer;
 }
-footer .social-media img {
+footer .container .social-media img {
   width: 8vw;
   max-width: 45px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
