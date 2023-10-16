@@ -76,6 +76,9 @@ main .container h2 {
   font-size: 25rem;
   font-weight: 500;
 }
+main .container h3, main .container .find-us p {
+  font-size: 16rem;
+}
 main .container article {
   display: flex;
   flex-direction: column;
@@ -119,6 +122,9 @@ main .container article .impact-section button {
   font-weight: bold;
   color: #ffffff;
 }
+main .container article .impact-section button:hover {
+  transform: scale(1.1);
+}
 main .container .product-section {
   width: auto;
 }
@@ -128,9 +134,6 @@ main .container .product-section .product-img img {
      object-fit: cover;
   width: 100%;
   border-radius: 6px;
-}
-main .container .product-section h3 {
-  font-size: 16rem;
 }
 main .container .product-section .card-section {
   display: flex;
@@ -201,10 +204,29 @@ main .container .gallery .gallery-images {
 }
 main .container .gallery .gallery-images img {
   width: 80vw;
+  max-width: 400px;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+main .container .gallery .gallery-images img:hover {
+  transform: scale(1.1);
+}
+main .container .find-us {
+  display: flex;
+  flex-direction: column;
+}
+main .container .find-us iframe {
+  width: 100%;
+  margin-bottom: 30px;
+}
+main .container .find-us h3, main .container .find-us p {
+  color: #E86424;
+}
+main .container .find-us p {
+  font-size: 14rem;
+  padding-bottom: 50px;
 }
 
 footer {
@@ -213,13 +235,19 @@ footer {
   justify-content: space-evenly;
   width: 100vw;
   height: 250px;
-  padding-left: 30px;
   background-color: #FA9500;
   color: #ffffff;
+}
+footer h3, footer main .container .find-us p, main .container .find-us footer p, footer p {
+  padding-left: 20px;
 }
 footer .social-media {
   display: flex;
   justify-content: center;
   gap: 20px;
   cursor: pointer;
+}
+footer .social-media img {
+  width: 8vw;
+  max-width: 45px;
 }/*# sourceMappingURL=main.css.map */
