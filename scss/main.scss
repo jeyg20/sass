@@ -117,7 +117,7 @@ main {
             }
 
             .impact-section {
-                @include flexCenter(column,space-between, center);
+                @include flexCenter(column, space-between, center);
                 gap: 25px;
                 padding-top: 10px;
 
@@ -219,14 +219,19 @@ main {
         }
         
         .gallery {
-            @include flexCenter(column, normal, center);
-            gap: 40px;
-            padding-bottom: 40px;
-            img {
-                width: 70vw;
-                aspect-ratio: 1;
-                object-fit: cover;
-                border-radius: 10px;
+            padding: 0 20px;
+
+            .gallery-images {
+                @include flexCenter(column, normal, center);
+                gap: 40px;
+                padding-bottom: 40px;
+
+                img {
+                    width: 80vw;
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
             }
         }
 
