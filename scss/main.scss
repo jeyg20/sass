@@ -204,7 +204,7 @@ main {
                         width: 30vw;
                         max-width: 200px;
                     }
-                    
+
                     p {
                         width: 180px;
                         text-align: center;
@@ -215,6 +215,18 @@ main {
                 .innovation {
                     @extend .sustainability;
                 }
+            }
+        }
+        
+        .gallery {
+            @include flexCenter(column, normal, center);
+            gap: 40px;
+            padding-bottom: 40px;
+            img {
+                width: 70vw;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 10px;
             }
         }
 

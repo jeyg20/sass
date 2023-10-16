@@ -188,6 +188,22 @@ main .container .about-us-section .why-us .sustainability p, main .container .ab
   color: #E86424;
   font-weight: 500;
 }
+main .container .gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+main .container .gallery img {
+  width: 70vw;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
 footer {
   display: flex;
   flex-direction: column;
