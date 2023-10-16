@@ -107,9 +107,9 @@ main {
 
             .img-section {
                 img {
-                    width: 85vw;
+                    width: 100%;
                     max-width: 600px;
-                    aspect-ratio: 1 / 1.1;
+                    aspect-ratio: 1;
                     object-fit: cover;
                     border-radius: 10px;
                     justify-content: center;
