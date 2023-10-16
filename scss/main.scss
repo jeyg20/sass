@@ -61,7 +61,6 @@ nav {
            background-color: $primary-color;
            width: 100vw;
            border-radius: 10px;
-           box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
            @include buttonStyle();
            
            &.responsive {
@@ -69,7 +68,6 @@ nav {
            }
         }
 
-    
         .hamburger {
             display: block;
             cursor: pointer;
@@ -84,7 +82,6 @@ nav {
             }
         }
     }
-
 }
 
 main {
@@ -104,9 +101,7 @@ main {
             font-weight: 500;
         }
 
-        h3 {
-            font-size: 16rem;
-        }
+        h3 { font-size: 16rem; }
 
         article {
             @include flexCenter(column, space-between, center);
@@ -146,8 +141,6 @@ main {
                     }
                 }
             }
-
-            
         }
 
         .product-section {
@@ -179,6 +172,7 @@ main {
                     padding: 35px 30px;
                     background-color: $secondary-color;
                     border-radius: 8px;
+
                     .icon {
                         @include flexCenter(row,flex-end, center);
                         justify-content: flex-end;
@@ -188,9 +182,7 @@ main {
                         width: 100%;
                         margin: 8px;
                     }
-
                 }
-
             }
             .furniture {
                 .product-card {
@@ -411,13 +403,9 @@ footer {
                     img {
                         width: 28vw;
                     }
-
                 }
             }
-
-
         }
-        
     }
 }
 
