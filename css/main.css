@@ -85,7 +85,7 @@ main .container article {
   color: #7C6A0A;
 }
 main .container article .img-section img {
-  width: 100%;
+  width: 80vw;
   max-width: 600px;
   aspect-ratio: 1;
   -o-object-fit: cover;
