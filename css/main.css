@@ -71,6 +71,11 @@ main .container {
   margin: 0 auto;
   padding: 0px 20px;
 }
+main .container h2 {
+  margin: 40px 0;
+  font-size: 25rem;
+  font-weight: 400;
+}
 main .container article {
   display: flex;
   flex-direction: column;
@@ -114,31 +119,26 @@ main .container article .impact-section button {
   font-weight: bold;
   color: #ffffff;
 }
-main .container section {
+main .container .product-section {
   width: auto;
 }
-main .container section h2 {
-  margin: 40px 0;
-  font-size: 25rem;
-  font-weight: 400;
-}
-main .container section .product-img img {
+main .container .product-section .product-img img {
   aspect-ratio: 1/1.2;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   border-radius: 6px;
 }
-main .container section h3 {
+main .container .product-section h3 {
   font-size: 16rem;
 }
-main .container section .card-section {
+main .container .product-section .card-section {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   gap: 30px;
 }
-main .container section .card-section .product-card {
+main .container .product-section .card-section .product-card {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -152,7 +152,7 @@ main .container section .card-section .product-card {
   background-color: #FFDAC6;
   border-radius: 8px;
 }
-main .container section .card-section .product-card .icon {
+main .container .product-section .card-section .product-card .icon {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -164,25 +164,43 @@ main .container section .card-section .product-card .icon {
   width: 100%;
   margin: 7px;
 }
-main .container section .furniture .product-card {
+main .container .product-section .furniture .product-card {
   background-color: #BABD8D;
 }
+main .container .about-us-section .why-us {
+  display: flex;
+  flex-direction: column;
+}
+main .container .about-us-section .why-us .sustainability, main .container .about-us-section .why-us .innovation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+main .container .about-us-section .why-us .sustainability img, main .container .about-us-section .why-us .innovation img {
+  width: 100px;
+}
+main .container .about-us-section .why-us .sustainability p, main .container .about-us-section .why-us .innovation p {
+  width: 180px;
+  text-align: center;
+  color: #E86424;
+  font-weight: 500;
+}
 
-.footer {
+footer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+  width: 100vw;
   height: 250px;
   padding-left: 30px;
   background-color: #FA9500;
   color: #ffffff;
 }
-.footer .social-media {
+footer .social-media {
   display: flex;
   justify-content: center;
   gap: 20px;
-  position: sticky;
-  bottom: 0;
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

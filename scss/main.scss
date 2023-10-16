@@ -92,6 +92,13 @@ main {
         max-width: $max-width;
         margin: 0 auto;
         padding: 0px 20px;
+
+        h2 {   
+            margin: 40px 0;
+            font-size: 25rem;
+            font-weight: 400;
+        }
+
         article {
             @include flexCenter(column, space-between, center);
             width: auto;
@@ -131,13 +138,9 @@ main {
             
         }
 
-        section {
+        .product-section {
             width: auto;
-            h2 {   
-                margin: 40px 0;
-                font-size: 25rem;
-                font-weight: 400;
-            }
+            
             .product-img{
                 img {
                     aspect-ratio: 1 / 1.2;
@@ -187,12 +190,34 @@ main {
                 }
             }    
         }
+        
+        .about-us-section {
+            .why-us {
+                @include flexCenter(column);
+                
+                .sustainability, .innovation {
+                    @include flexCenter(column, space-between, center);
+                    margin-bottom: 40px;
+
+                    img {
+                        width: 100px;
+                    }
+                    p {
+                        width: 180px;
+                        text-align: center;
+                        color: $secondary-text-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
     }
 }
 
-.footer {
+footer {
     @include flexCenter(column, space-evenly);
-    width: 100%;
+    width: 100vw;
     height: 250px;
     padding-left: 30px;
     background-color: $quaternary-color;
@@ -201,8 +226,6 @@ main {
         display: flex;
         justify-content: center;
         gap: 20px;
-        position: sticky;
-        bottom: 0;
         cursor: pointer;
     }
 }
