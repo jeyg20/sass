@@ -74,7 +74,7 @@ main .container {
 main .container h2 {
   margin: 40px 0;
   font-size: 25rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 main .container article {
   display: flex;
@@ -179,7 +179,8 @@ main .container .about-us-section .why-us .sustainability, main .container .abou
   margin-bottom: 40px;
 }
 main .container .about-us-section .why-us .sustainability img, main .container .about-us-section .why-us .innovation img {
-  width: 100px;
+  width: 30vw;
+  max-width: 200px;
 }
 main .container .about-us-section .why-us .sustainability p, main .container .about-us-section .why-us .innovation p {
   width: 180px;
@@ -187,7 +188,6 @@ main .container .about-us-section .why-us .sustainability p, main .container .ab
   color: #E86424;
   font-weight: 500;
 }
-
 footer {
   display: flex;
   flex-direction: column;
